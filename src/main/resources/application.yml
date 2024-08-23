@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: tradingsystem-api
+#  datasource:
+#   driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost/3306/emexo?useSSL=false&allowPublicKeyRetrieval=true
+#    username: root
+#    password: Divya@2426
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: TradingManagement
+logging:
+  level:
+    com:
+      orientalexchange: debug
+  file:
+    name: orientalexchange.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#JpaHibernate:
+#  show-sql: true
+#  properties:
+#    hibernate:
+#      dialect: org.hibernate.dialect.MySQL5Dialect
+#      ddl-auto: update
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    open-in-view: false
+server:
+  port: 9090
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 5.0.5
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1090/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,loggers,beans,mappings,env,caches
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: tradingsystem-api
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/emexo?useSSL=false&allowPublicKeyRetrieval=true
+#    username: root
+#    password: Divya@2426
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: TradingManagement
+logging:
+  level:
+    com:
+      orientalexchange: debug
+  file:
+    name: orientalexchange.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    open-in-view: false
+#JpaHibernate:
+#  show-sql: true
+#  properties:
+#    hibernate:
+#      dialect: org.hibernate.dialect.MySQL5Dialect
+#      ddl-auto: update
+server:
+  port: 9090
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 5.0.5
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,loggers,beans,mappings,threaddump,env,caches
+  endpoint:
+    health:
+      show-details: always
